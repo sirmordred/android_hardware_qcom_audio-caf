@@ -1522,7 +1522,7 @@ status_t AudioHardware::doRouting(AudioStreamInMSM72xx *input, uint32_t outputDe
     }
 
 #ifdef SAMSUNG_AUDIO
-    if (mMode == AudioSystem::MODE_IN_CALL) {
+    if (mMode == AUDIO_MODE_IN_CALL) {
         if (sndDevice == SND_DEVICE_HANDSET) {
             ALOGI("Routing audio to Call Handset\n");
             sndDevice = SND_DEVICE_CALL_HANDSET;
@@ -1533,7 +1533,7 @@ status_t AudioHardware::doRouting(AudioStreamInMSM72xx *input, uint32_t outputDe
             ALOGI("Routing audio to Call Headset\n");
             sndDevice = SND_DEVICE_CALL_HEADSET;
         }
-    } else if (mMode == AudioSystem::MODE_IN_COMMUNICATION) {
+    } else if (mMode == AUDIO_MODE_IN_COMMUNICATION) {
         if (sndDevice == SND_DEVICE_HANDSET) {
             ALOGI("Routing audio to VOIP handset\n");
             sndDevice = SND_DEVICE_VOIP_HANDSET;
