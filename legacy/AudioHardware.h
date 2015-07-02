@@ -541,10 +541,10 @@ private:
             BuffersAllocated(void *buf1, void *buf2, int32_t nSize, int32_t fd) :
             localBuf(buf1), memBuf(buf2), memBufsize(nSize), memFd(fd)
             {}
-            BuffersAllocated(void *buf1, void *buf2, int32_t nSize, int32_t share_fd, struct ion_handle *handle) :
+            BuffersAllocated(void *buf1, void *buf2, int32_t nSize, int32_t share_fd, ion_user_handle_t handle) :
             ion_handle(handle), localBuf(buf1), memBuf(buf2), memBufsize(nSize), memFd(share_fd)
             {}
-            struct ion_handle *ion_handle;
+            ion_user_handle_t ion_handle;
             void* localBuf;
             void* memBuf;
             int32_t memBufsize;
